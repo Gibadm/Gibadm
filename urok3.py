@@ -32,7 +32,7 @@ dict2 = {
         'time': list1[int(inp1)][:15],
         'pc_name':list1[int(inp1)].split(' ')[3],
         'service_name':list1[int(inp1)].split(' ')[4],
-        'message':list1[int(inp1)].split(': ')[-1]
+        'message':list1[int(inp1)].split(': ', maxsplit=1)[-1]
     }
 }
 
