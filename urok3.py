@@ -19,7 +19,7 @@ dict1 = {
         'time': list1[0][:15],
         'pc_name':list1[0].split(' ')[3],
         'service_name':list1[0].split(' ')[4],
-        'message':list1[0].split(': ')[-1]
+        'message':list1[0].split(': ', maxsplit=1)[-1]
     }
 }
 
