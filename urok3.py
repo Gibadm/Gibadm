@@ -12,17 +12,28 @@ str11 = 'May 24 19:26:40 PC-00102 rtkit-daemon[1131]: Supervising 5 threads of 2
 
 
 list1 = [str1, str2 , str3, str4, str5, str6, str6, str7, str8, str8, str9, str10, str11]
-#print(list1[0])
-# Вывод time
-#print(list1[0].split(' ')[0])
-
+# 2 - данный алгоритм универсален для любой строки. Меняя значение переменной list1 мы можем выводить данные 
+# любой строки. Не стал описывать весь словарь для сохранения места в листинге задания.
 dict1 = {
-    'string1': {
+    'string_1': {
         'time': list1[0][:15],
         'pc_name':list1[0].split(' ')[3],
         'service_name':list1[0].split(' ')[4],
-        'message':list1[0].split(':')[-1]
+        'message':list1[0].split(': ')[-1]
     }
 }
 
-print(dict1['string1']['time'])
+print(dict1['string_1']['time'])
+
+# 3 - Более удобный вариант, но решил оставить и первый.
+inp1 = input("Введите номер строки:")
+dict2 = {
+    'string_1': {
+        'time': list1[int(inp1)][:15],
+        'pc_name':list1[int(inp1)].split(' ')[3],
+        'service_name':list1[int(inp1)].split(' ')[4],
+        'message':list1[int(inp1)].split(': ')[-1]
+    }
+}
+
+print(dict2['string_1']['pc_name'], ": ", dict2['string_1']['message'])
